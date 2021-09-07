@@ -13,13 +13,12 @@
     </h1>
     <nav>
       <ul>
-        <li>
-          <%# ici j'indique le chemin de ma route pour diceRoller %>
-          <a href="/game/diceRoller">Dice Roller</a>
-        </li>
-        <li>
-          <a href="/game/fourchette">Fourchette</a>
-        </li>
+        <% for (const game of games) { %> 
+          <li>
+            <a href="/game/<%= game.name %>"><%= game.title %></a>
+          </li>
+        <% } %> 
+
       </ul>
     </nav>
   </header>
