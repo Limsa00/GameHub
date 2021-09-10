@@ -7,7 +7,7 @@ router.get('/', (req,res) => {
     res.render('index')
 });
 
-router.get('/game/:name', (req,res) => {
+router.get('/game/:name', (req,res, next) => {
     const name = req.params.name;
 
     let game
@@ -24,7 +24,7 @@ router.get('/game/:name', (req,res) => {
         res.render(game.name);
     }
     else {
-        res.status(404).send('erreur');
+        next();
     }
 });
 

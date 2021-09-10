@@ -1,0 +1,24 @@
+   
+        <footer class="footer">   
+            <!--  
+                un formulaire est une moyen facilitant pour faire une requete http
+                si le formulaire est en get la requete http envoyé aura sa query string remplie avec les name des champs en clé et les valeurs saisies en valeurs
+            -->
+            <form action="/categorie" method="get" class="search">
+                <label>
+                    Catégorie
+                    <input name="tag" placeholder="s2, s3, ..." class="search-input" type="text">
+                </label>
+                <button class="search-submit" type="submit">Ok</button>
+            </form>
+
+            <p><a href="/login">Accès admin</a></p>
+        </footer>
+    </div>
+    
+    <% if (typeof game !== 'undefined' && game.jsFile) { %>
+        <script src="/js/<%= game.jsFile %>"></script>
+    <% } %>
+</body>
+
+</html>

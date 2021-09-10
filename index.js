@@ -7,9 +7,13 @@ const games = require ('./games.json');
 const server = express();
 server.set('view engine', 'ejs');
 
+server.use(express.static(__dirname + '/public'));
+
 server.use(router);
 
-server.use(express.static(__dirname + '/public'));
+server.use((req,res)=>{
+    res.status(404).render('error');
+})
 
 server.locals.games = games;
 
